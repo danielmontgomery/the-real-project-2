@@ -26,13 +26,12 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
           <li><a href="#">Profile</a></li>
-          <li><a href="#students">Extra Stuff</a></li>
           <li><%= link_to 'All Users', users_path %></li>
 
             <% if current_user != nil %>
-              <li>Welcome, <%= current_user.username %>.</li>
+              <li><a href="#">Welcome, <%= current_user.username %>.</a></li>
               <li><%= link_to "log out", sessions_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "sign up", new_user_path, method: :get %></li>

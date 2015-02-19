@@ -36,7 +36,11 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-6 col-md-8">
+			<% if current_user != nil %>
 			<%= link_to "Upload your own!", new_picture_path, :class => 'btn btn-primary' %>
+			<% else %>
+			<%= link_to "Upload your own!", new_sessions_path, :class => 'btn btn-primary' %>
+			<% end %>
 		</div>
 	</div><br><br>
 	<div class="row">

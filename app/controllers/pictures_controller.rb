@@ -8,14 +8,19 @@ class PicturesController < ApplicationController
       if a != b
         @rand_pic = a
         @rand_pic2 = b
+      else
+        redirect_to pictures_path
       end
+
     else
-      redirect_to new_picture_path
+      redirect_to new_picture_path 
     end
     # a better way to do rand pic:
 
     puts "=================="
     puts Picture.count
+    puts @rand_pic
+    puts @rand_pic2
     puts "=================="
   end
 
@@ -45,19 +50,30 @@ class PicturesController < ApplicationController
   end
 
   def update
-    if 
-    Picure.update(params.require(:picture).permit(:pic, :caption, :score))
-        # picture = Picture.find(params[:id])
-        # (params.require(:picture).permit(:pic, :caption, :score))
-    end
-    if picture.save
+    pict = Picture.where(id: params[:id]).first
+    # raise params.inspect
+    pict.increment(:score)
+    if pict.save
       redirect_to pictures_path
+    else
+      raise params.inspect
     end
+    # if 
+    # pict = Picure.update(params.require(:pic).permit(:pic, :caption, :score))
+    #     picture = Picture.find(params[:id])
+    #     (params.require(:picture).permit(:pic, :caption, :score))
+    # end
+    # if picture.save
+    #   redirect_to pictures_path
+    # end
   end
 
   def destroy
   end
+  # private
+  #   def user_params
+  #     params.require(:picture).permit(:pic, :caption, :score)
+  #   end
 end
 
 # THIS WORKS:
-# @rand_pic.increment(:score)

@@ -46,7 +46,6 @@ class PicturesController < ApplicationController
   end
 
   def edit
-      
   end
 
   def update
@@ -69,6 +68,10 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def leaderboard
+    
   end
   # private
   #   def user_params

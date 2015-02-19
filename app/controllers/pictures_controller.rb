@@ -22,6 +22,9 @@ class PicturesController < ApplicationController
     picture = Picture.new(params.require(:picture).permit(:pic, :caption, :score))
     if picture.save
       redirect_to pictures_path
+    else
+      # TODO - This should redirect to an error page if the image isn't saved. The reason it won't save is because it is over 1MB. 
+      redirect_to pictures_path
     end
   end
 

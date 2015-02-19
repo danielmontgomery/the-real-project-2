@@ -60,7 +60,7 @@ development:
 #   database: p2_2_test
 test:
   adapter: postgresql
-  database: travis_ci_test
+  database: p2_2
   username: postgres
 
 # As with config/secrets.yml, you never want to store sensitive information,

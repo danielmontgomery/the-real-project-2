@@ -1,0 +1,97 @@
+<h1>compare pictures on this page</h1>
+
+
+<div class="all">
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Pick the best image:</h2>
+		</div>
+	</div>
+
+		<div class="gameboard">
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<%= image_tag @rand_pic.pic.url(:display) %>
+						<div class="caption">
+							<h3></h3>
+							<p><%= @rand_pic.caption %></p>
+							<p id="score1"><%= @rand_pic.score %></p>
+							<p><a href="#" class="btn btn-primary" role="button" onclick="incrementer()">Choose This Image!</a></p>
+						</div>
+					</div>
+				</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<%= image_tag @rand_pic2.pic.url(:display) %>				
+					<div class="caption">
+						<h3></h3>
+						<p><%= @rand_pic2.caption %></p><br>
+						<p id="score2"><%= @rand_pic2.score %></p>
+						<button type='submit' class="btn btn-primary" id="button" onclick="incrementer()">Choose this image</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-8">
+			<%= link_to "Upload your own!", new_picture_path, :class => 'btn btn-primary' %>
+		</div>
+	</div><br><br>
+	<div class="row">
+		<div class="col-sm-6 col-md-8">
+			<%= link_to "Top 100!", new_picture_path, :class => 'btn btn-primary' %>
+		</div>
+	</div>
+</div>
+<script>
+var numScore = $( "#score" ).text()
+parseInt(numScore);
+console.log("Score: " + numScore);
+
+var pic_id = <%= @rand_pic.id %>;
+console.log("Pic Id: " + pic_id);
+
+function incrementer(){
+	console.log("clicked");
+	numScore++;
+	console.log("New Score: " + numScore);
+	$.ajax({
+		//URL for request:
+		url: "pictures/" + pic_id,
+		//Data to be sent:
+		data: { score: numScore },
+		type: "PUT",
+		//Type of data we expect back?
+		//Success function:
+		success: function(response, textStatus, jqXhr) {
+			console.log("The following error occured: " + textStatus, errorThrown);
+		},
+		complete: function() {
+			console.log("Score Put Ran");
+		},
+		error: function( xhr, status, errorThrown ){
+			console.log( "There was a problem" );
+			console.log( "Error: " + errorThrown );
+			console.log( "Status: " + status );
+			console.dir( xhr );
+		}
+	});
+
+}
+
+
+	// $.get( 'pictures/' + pic_id, {score : numScore}, function(){
+	// 	console.log( "success" );
+	// })
+	// .done(function(){
+	// 	console.log( "second success" );
+	// })
+	// .fail(function(){
+	// 	console.log( "error" );
+	// })
+	// .always(function(){
+	// 	console.log( "finished" );
+	// });
+</script>

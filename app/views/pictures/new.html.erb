@@ -1,0 +1,16 @@
+<h1>Pictures#new</h1>
+<p>Find me in app/views/pictures/new.html.erb</p>
+
+<%= form_for @picture, :url => pictures_path, :html => { :multipart => true } do |f| %>
+
+
+	<div class="field">
+	Your Image: <%= f.file_field :pic %>
+	</div><br><br>
+	<div class="field">
+	Your Caption: <%= f.text_field :caption %>
+	</div><br><br>
+	<%= f.submit %>
+<% end %>
+
+

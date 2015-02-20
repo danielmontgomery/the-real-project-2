@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem "paperclip", "~> 4.2"
 # gem 'actionpack', '~> 4.2.0'
 gem 'bootstrap-sass', '~> 3.2.0'
-
+gem 'rails_12factor'
 # gem 'client_side_validations', '~> 3.2.6'
 
 gem 'bootstrap_form'

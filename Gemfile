@@ -23,7 +23,7 @@ gem 'bootstrap_form'
 
 gem 'figaro'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '<2.0' 
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

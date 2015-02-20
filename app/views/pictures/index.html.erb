@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="gamePiece">
 					<div class="thumbnail">
-						<%= image_tag @rand_pic.pic.url(:medium) %>
+						<%= image_tag @rand_pic.pic.url(:display) %>
 						<div class="caption">
 							<p><%= @rand_pic.caption %></p>
 							<p id="score1"><%= @rand_pic.score %></p>
@@ -18,7 +18,7 @@
 				</div>
 			<div class="gamePiece">
 				<div class="thumbnail">
-					<%= image_tag @rand_pic2.pic.url(:medium) %>				
+					<%= image_tag @rand_pic2.pic.url(:display) %>				
 					<div class="caption">
 						<p><%= @rand_pic2.caption %></p><br>
 						<p id="score2"><%= @rand_pic2.score %></p>

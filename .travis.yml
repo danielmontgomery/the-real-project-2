@@ -1,6 +1,13 @@
 language: ruby
 rvm:
-  - 2.0.0-p481
-
+- 2.0.0-p481
 before_script:
-  - psql -c 'create database p2_2;' -U postgres
+- psql -c 'create database travis_ci_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: VJFoy88MtRXYR0+pI2Kwzje3ow3X/DT9QM43Roa7cY3Y/rbsQ/qDSTV6oEev8z7wypSZZmfCb8DaTMaL350Ud/aUoX85V8mY0t5mQ19t1I1IHUfrWGtuS7THojwmBAmdv0tbgM+aWxLAu2DB9im/IDiM5QEzAsFB1zW8y5p8dBw=
+  app: intense-escarpment-9088
+  run:
+    - "rake db:migrate"
+    - restart

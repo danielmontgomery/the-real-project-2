@@ -1,0 +1,30 @@
+// Place all the styles related to the leadboards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.myTable {
+	width: 100%;
+}
+
+.tableHeader {
+	text-align: left;
+
+}
+.tableHeader{
+	padding: 5px
+}
+.tableData1{
+	width: 25%;
+	padding: 20px;
+	text-align: right;
+}
+.tableData2{
+	width: 5%;
+	padding: 20px;
+	text-align: right;
+	border-right: 1px solid #123456;
+}
+.tableData3{
+	width: 55%;
+	padding: 20px;
+}

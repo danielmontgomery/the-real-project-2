@@ -14,8 +14,16 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem "paperclip", "~> 4.2"
-
+# gem 'actionpack', '~> 4.2.0'
 gem 'bootstrap-sass', '~> 3.2.0'
+
+# gem 'client_side_validations', '~> 3.2.6'
+
+gem 'bootstrap_form'
+
+gem 'figaro'
+
+gem 'aws-sdk'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

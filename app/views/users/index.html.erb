@@ -5,3 +5,13 @@
 	<%= u.username %><br>
 	<%= image_tag u.avatar.url(:medium) %><br>
 <% end %>	
+
+	<div class="row">
+		<div class="col-sm-6 col-md-8">
+			<% if current_user != nil %>
+			<%= link_to "Add a new user!", new_user_path, :class => 'btn btn-primary' %>
+			<% else %>
+			<%= link_to "Ad a new user!!", new_user_path, :class => 'btn btn-primary' %>
+			<% end %>
+		</div>
+	</div><br><br>

@@ -1,10 +1,11 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
-<%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
-	Your Username: <%= f.text_field :username %><br />
-	Your Password: <%= f.password_field :password %><br />
-	Password Again: <%= f.password_field :password_confirmation %>
-	Profile Picture: <%= f.file_field :avatar %><br />
+<%= bootstrap_form_for @user, validate: :true, :url => users_path, :html => { :multipart => true } do |f| %>
+	<%= f.text_field :username, help: "Must be under 50 characters" %><br />
+	<%= f.password_field :password, help: "must be at least 8 characters long" %><br />
+	<%= f.password_field :password_confirmation %>
+	<%= f.file_field :avatar %><br />
+	<%= yield(:user_validators) %>
 	<%= f.submit %>
 <% end %>

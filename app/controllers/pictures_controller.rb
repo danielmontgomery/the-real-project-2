@@ -70,9 +70,7 @@ class PicturesController < ApplicationController
   def destroy
   end
 
-  def leaderboard
-    
-  end
+
   # private
   #   def user_params
   #     params.require(:picture).permit(:pic, :caption, :score)

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :leaderboards, only: [:index]
+
   resource :sessions, only: [:new, :create, :destroy]
 
   resources :pictures

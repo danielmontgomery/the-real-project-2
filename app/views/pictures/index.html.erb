@@ -1,6 +1,6 @@
 <h1>compare pictures on this page</h1>
 
-<div class="content"
+<div class="content">
 	<div class="all">
 		<div class="gameboard">
 			<div class="row">
@@ -9,11 +9,10 @@
 						<%= image_tag @rand_pic.pic.url(:display) %>
 						<div class="caption">
 							<p><%= @rand_pic.caption %></p>
-							<p id="score1"><%= @rand_pic.score %></p>
-							<p><a href="#" class="btn btn-primary" role="button" onclick="incrementer()">Choose This Image!</a></p>
-							<p><%= link_to "cast your vote", picture_path(@rand_pic), method: :patch %></p>
-
+							<p id="score1" class="score"><%= @rand_pic.score %></p>
 						</div>
+						<%= link_to "Cast your vote!", picture_path(@rand_pic), method: :patch, :class => 'btn btn-primary' %>
+
 					</div>
 				</div>
 			<div class="gamePiece">
@@ -21,34 +20,31 @@
 					<%= image_tag @rand_pic2.pic.url(:display) %>				
 					<div class="caption">
 						<p><%= @rand_pic2.caption %></p><br>
-						<p id="score2"><%= @rand_pic2.score %></p>
-						<p><a href="#" class="btn btn-primary" role="button" onclick="incrementer()">Choose This Image!</a></p>
-						<p><%= link_to "cast your vote", picture_path(@rand_pic2), method: :patch %></p>
-
+						<p id="score2" class="score"><%= @rand_pic2.score %></p>
+						<%= link_to "Cast your vote!", picture_path(@rand_pic2), method: :patch, :class => 'btn btn-primary' %>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="btn-row">
-			<% if current_user != nil %>
-			<%= link_to "Upload your own!", new_picture_path, :class => 'btn btn-primary' %>
-			<% else %>
-			<%= link_to "Upload your own!", new_sessions_path, :class => 'btn btn-primary' %>
-			<% end %>
+	<div class="thirdRow">
+		<div class="row">
+			<div class="btn-row">
+				<% if current_user != nil %>
+				<%= link_to "Upload your own!", new_picture_path, :class => 'btn btn-primary' %>
+				<% else %>
+				<%= link_to "Upload your own!", new_sessions_path, :class => 'btn btn-primary' %>
+				<% end %>
 
-			<%= link_to "Top 100!", new_picture_path, :class => 'btn btn-primary' %>
-		</div>
-	</div><br><br>
-	<!-- <div class="row">
-		<div class="col-sm-6 col-md-8">
-			<%= link_to "Top 100!", new_picture_path, :class => 'btn btn-primary' %>
-		</div>
-	</div> -->
+				<%= link_to "Top 100!", leaderboards_path, :class => 'btn btn-primary' %>
+			</div>
+		</div><br><br>
+	</div>
+
 </div>
 </div>
 <script>
+//this doesn't work. Ideally I'll figure it out soon to avoid having to reload the page. 	
 var numScore = $( "#score1" ).text()
 parseInt(numScore);
 console.log("Score: " + numScore);

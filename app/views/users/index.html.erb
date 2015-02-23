@@ -1,11 +1,10 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>All Users</h1>
 
 <% @user.each do |u| %>
 	<%= u.username %><br>
 	<%= image_tag u.avatar.url(:medium) %><br>
 <% end %>	
-
+<div class="thirdRow"
 	<div class="row">
 		<div class="col-sm-6 col-md-8">
 			<% if current_user != nil %>
@@ -15,3 +14,4 @@
 			<% end %>
 		</div>
 	</div><br><br>
+</div>

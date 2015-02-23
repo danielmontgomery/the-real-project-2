@@ -8,23 +8,39 @@
 
 .tableHeader {
 	text-align: left;
-
 }
 .tableHeader{
 	padding: 5px
 }
 .tableData1{
+	font-family: 'Playfair Display SC', serif;
 	width: 25%;
 	padding: 20px;
 	text-align: right;
 }
 .tableData2{
+	font-family: 'Playfair Display SC', serif;
 	width: 5%;
 	padding: 20px;
 	text-align: right;
 	border-right: 1px solid #123456;
 }
 .tableData3{
+	font-family: 'Playfair Display SC', serif;
 	width: 55%;
 	padding: 20px;
 }
+.tableData22{
+	width: 5%;
+	padding: 20px;
+	text-align: right;
+	border-right: 1px solid #123456;
+	font-family: 'Playfair Display SC', serif;
+	font-weight: 900;
+	font-size: 60px;
+}
+.tableData33{
+	width: 55%;
+	padding: 20px;
+}
+

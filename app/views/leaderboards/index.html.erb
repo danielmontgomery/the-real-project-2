@@ -1,4 +1,4 @@
-<h1><i>The Top 100</i></h1>
+<h1 class="titled"><i>The Top 100</i></h1>
 <table class="myTable">
 	<thead>
 		<tr class="tableHeader">
@@ -11,8 +11,8 @@
 		<% @posts.each do |p| %>
 		<tr class="tableHeader">
 			<td class="tableData1"><%= image_tag p.pic.url(:medium) %></td>
-			<td class="tableData2"><%= p.score %></td>
-			<td class="tableData3"><%= p.caption %></td>
+			<td class="tableData22"><%= p.score %></td>
+			<td class="tableData33"><%= p.caption %></td>
 		</tr>
 		<% end %>
 	</tbody>

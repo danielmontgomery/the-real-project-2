@@ -1,6 +1,6 @@
-<h1>compare pictures on this page</h1>
+<h1 class="titled"><i>Picture Competition</i></h1>
 
-<div class="content">
+<!-- <div class="content"> -->
 	<div class="all">
 		<div class="gameboard">
 			<div class="row">
@@ -27,22 +27,17 @@
 			</div>
 		</div>
 	</div>
-	<div class="thirdRow">
-		<div class="row">
-			<div class="btn-row">
-				<% if current_user != nil %>
-				<%= link_to "Upload your own!", new_picture_path, :class => 'btn btn-primary' %>
-				<% else %>
-				<%= link_to "Upload your own!", new_sessions_path, :class => 'btn btn-primary' %>
-				<% end %>
-
-				<%= link_to "Top 100!", leaderboards_path, :class => 'btn btn-primary' %>
-			</div>
-		</div><br><br>
-	</div>
-
 </div>
+<div class="thirdRow">
+	<% if current_user != nil %>
+	<%= link_to "Upload your own!", new_picture_path, :class => 'btn btn-primary' %>
+	<% else %>
+	<%= link_to "Upload your own!", new_sessions_path, :class => 'btn btn-primary' %>
+	<% end %>
+	<%= link_to "Top 100!", leaderboards_path, :class => 'btn btn-primary' %>
 </div>
+
+<!-- </div> -->
 <script>
 //this doesn't work. Ideally I'll figure it out soon to avoid having to reload the page. 	
 var numScore = $( "#score1" ).text()

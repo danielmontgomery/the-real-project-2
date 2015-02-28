@@ -34,7 +34,8 @@
           <li><%= link_to 'All Users', users_path %></li> 
 
             <% if current_user != nil %>
-              <li><a href="#">Welcome, <%= current_user.username %>.</a></li>
+              <li>
+              <a href="#">Welcome, <%= current_user.username %>.</a></li>
               <li><%= link_to "log out", sessions_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "sign up", new_user_path, method: :get %></li>

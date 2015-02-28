@@ -18,6 +18,7 @@ gem "paperclip", "~> 4.2"
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'rails_12factor'
 # gem 'client_side_validations', '~> 3.2.6'
+gem 'whenever', :require => false
 
 gem 'bootstrap_form'
 
@@ -49,6 +50,8 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  gem 'rspec-rails', '~> 3.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'

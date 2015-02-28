@@ -1,21 +1,7 @@
-<h1>Profile</h1>
-<h1><i>The Top 100</i></h1>
-<table class="myTable">
-	<thead>
-		<tr class="tableHeader">
-			<th class="tableData1">Picture</th>
-			<th class="tableData2">Points</th>
-			<th class="tableData3">Caption</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @users.each do |u| %>
-		<tr class="tableHeader">
-			<td class="tableData1"><%= image_tag p.pic.url(:medium) %></td>
-			<td class="tableData2"><%= p.score %></td>
-			<td class="tableData3"><%= p.caption %></td>
-		</tr>
-		<% end %>
-	</tbody>
 
-	
+<h1><%= @currentUser.username %>'s Profile</h1><br>
+<%= image_tag @currentUser.avatar.url(:medium) %><br>
+<%= link_to 'back to the menu', users_path %><br>
+
+
+<%= link_to ' Delete', @currentUser, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary' %>

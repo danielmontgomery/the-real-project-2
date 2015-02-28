@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resource :sessions, only: [:new, :create, :destroy]
 
-  resources :pictures
+  resources :pictures, :collection => { :destroy_multiple => :delete}
 
   resources :users
 

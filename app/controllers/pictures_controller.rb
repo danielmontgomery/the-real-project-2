@@ -70,6 +70,15 @@ class PicturesController < ApplicationController
   def destroy
   end
 
+  def destroy_multiple
+      @toBeDeleted = Picture.where("created_at <= ?", Time.now - 24.hours)
+      if @toBeDeleted.destroy_all
+        redirect_to leaderboards_path
+      else
+        raise params.inspect
+      end
+  end
+
 
   # private
   #   def user_params

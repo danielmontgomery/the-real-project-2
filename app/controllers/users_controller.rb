@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.all
+    @currentUser = User.where(id: session["user_id"]).first
+
   end
 
   def new
@@ -25,6 +26,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.where(id: params[:id]).first
+    @user.destroy
+    redirect_to users_path
   end
 
 end

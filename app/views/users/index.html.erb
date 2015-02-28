@@ -3,15 +3,14 @@
 <% @user.each do |u| %>
 	<%= u.username %><br>
 	<%= image_tag u.avatar.url(:medium) %><br>
+	<%= link_to 'profile', u %><br>
 <% end %>	
-<div class="thirdRow"
-	<div class="row">
-		<div class="col-sm-6 col-md-8">
-			<% if current_user != nil %>
-			<%= link_to "Add a new user!", new_user_path, :class => 'btn btn-primary' %>
-			<% else %>
-			<%= link_to "Add a new user!!", new_user_path, :class => 'btn btn-primary' %>
-			<% end %>
-		</div>
-	</div><br><br>
+<div class="thirdRow">
+
+	<% if current_user != nil %>
+	<%= link_to "Add a new user!", new_user_path, :class => 'btn btn-primary' %>
+	<% else %>
+	<%= link_to "Add a new user!!", new_user_path, :class => 'btn btn-primary' %>
+	<% end %>
+
 </div>
